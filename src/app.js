@@ -4,6 +4,7 @@ const connectDb = require('./config/connectDb')
 const authRouter = require('./routes/auth.routes')
 const cookieParser = require('cookie-parser')
 const postRouter = require('./routes/post.routes')
+const followRouter = require('./routes/follow.routes')
 
 const app = express()
 
@@ -17,6 +18,6 @@ app.use(cookieParser())
 // routes
 app.use("/api/auth", authRouter)
 app.use("/api/post", postRouter)
-
+app.use("/api/user/", followRouter)
 
 module.exports = app

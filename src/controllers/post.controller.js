@@ -5,8 +5,7 @@ const userModel = require('../models/user.model')
 
 const imagekit = new ImageKit({
     privateKey:process.env.IMAGEKIT_PRIVATE_KEY
-  })
-
+})
 
 const createPost = async (req,res)=>{
 try {
