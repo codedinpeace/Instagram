@@ -3,7 +3,7 @@ const userModel = require("../models/user.model");
 const bcrypt = require("bcrypt");
 
 const register = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, bio, imageURL } = req.body;
 
   try {
     const existingUser = await userModel.findOne({
@@ -19,6 +19,7 @@ const register = async (req, res) => {
       username,
       email,
       password: hashedPassword,
+      bio
     });
 
     createToken(user._id, user.username, res);
@@ -29,6 +30,8 @@ const register = async (req, res) => {
         username: user.username,
         email: user.email,
         createdAt: user.createdAt,
+        bio,
+        imageURL
       },
     });
   } catch (error) {
@@ -60,6 +63,8 @@ const login = async (req, res) => {
         username: user.username,
         email: user.email,
         createdAt: user.createdAt,
+        bio:user.bio,
+        imageURL: user.imageURL
       },
     });
   } catch (error) {
