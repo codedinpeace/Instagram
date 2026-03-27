@@ -4,7 +4,6 @@ const userSchema = mongoose.Schema(
   {
     username: {
       type: String,
-      minLength: 6,
       unique: [true, "user with that username already exists"],
     },
     email: {
