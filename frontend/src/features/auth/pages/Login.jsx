@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useAuthStore } from '../../States/authStore'
-import Loader from '../../components/Loader'
+import { useAuthStore } from '../../../States/authStore'
+import Loader from '../../../components/Loader'
 
 const Login = () => {
 
