@@ -77,7 +77,7 @@ const check = async (req,res) => {
   try {
     const id = req.user.userId
     const user = await userModel.findById(id)
-    res.status(200).json({user:{
+    res.status(200).json({authenticatedUser: {
       username: user.username,
       email : user.email,
       imgURl: user.imageURL,

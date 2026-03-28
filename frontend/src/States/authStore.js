@@ -31,8 +31,16 @@ export const useAuthStore = create((set)=>({
         } finally{
             set({isLoggingIn:false})
         }
-        
     },
 
+    check:async ()=>{
+        try {
+            const response = await axiosInstance.get("/auth/check")
+            set({authUser:response.data.authenticatedUser, isLoggedIn:true})
+            // console.log(response.data.authenticatedUser)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
 }))
