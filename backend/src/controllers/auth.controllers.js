@@ -73,7 +73,23 @@ const login = async (req, res) => {
   }
 };
 
+const check = async (req,res) => {
+  try {
+    const id = req.user.userId
+    const user = await userModel.findById(id)
+    res.status(200).json({user:{
+      username: user.username,
+      email : user.email,
+      imgURl: user.imageURL,
+      bio: user.bio
+    }})
+  } catch (error) {
+    
+  }
+}
+
 module.exports = {
   register,
   login,
+  check
 };
