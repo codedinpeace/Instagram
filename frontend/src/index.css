@@ -21,3 +21,9 @@ select:-webkit-autofill {
   -webkit-text-fill-color: white !important; /* change based on your theme */
   transition: background-color 5000s ease-in-out 0s;
 }
+
+.post-box{
+  background: linear-gradient(135deg, #d9d9d92c,#c6c6c61e,#acacac1f, #7373731f);
+  border-left: 1px solid rgba(0, 132, 255, 0.185);
+  border-right: 1px solid rgba(0, 89, 255, 0.24);
+}
