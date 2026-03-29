@@ -18,12 +18,12 @@ try {
     folder:'Instagram'
   })
 
-  const username = req.user
+  const userId = req.user.userId
 
   const post = await postModel.create({
     caption:req.body.caption,
     imgUrl:uploadedFile.url,
-    user:username
+    user:userId
   })
 
   res.status(200).json({message:"Post created successfully", post})
@@ -63,9 +63,15 @@ const getSinglePostDetails = async (req,res) => {
       res.status(200).json({message:"Post fetched", post})
 }
 
+const getFeed = async (req,res) => {
+  const posts = await postModel.find().populate("user")
+  res.status(200).json({posts})
+}
+
 module.exports = {
     createPost,
     getAllPosts,
     getSinglePost,
-    getSinglePostDetails
+    getSinglePostDetails,
+    getFeed
 }

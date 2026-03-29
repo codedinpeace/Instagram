@@ -10,11 +10,9 @@ const postSchema = mongoose.Schema(
       required: true,
     },
     user: {
-      // type:mongoose.Schema.Types.ObjectId,
-      // ref:"user",
-      // required:[true, "user is required for creating a post"],
-      type: String,
-      required: true,
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"user",
+      required:[true, "user is required for creating a post"],
     },
   },
   { timestamps: true }

@@ -11,7 +11,10 @@ postRouter.post(
   validateUser,
   postController.createPost
 );
-postRouter.get("/get-posts", validateUser, postController.getAllPosts);
+postRouter.get("/get-posts", 
+  validateUser, 
+  postController.getAllPosts);
+  
 postRouter.get(
   "/get-post/:username",
   validateUser,
@@ -22,5 +25,9 @@ postRouter.get(
   validateUser,
   postController.getSinglePostDetails
 );
+
+postRouter.get("/get-feed", 
+  validateUser, 
+  postController.getFeed)
 
 module.exports = postRouter;

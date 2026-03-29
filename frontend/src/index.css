@@ -27,3 +27,27 @@ select:-webkit-autofill {
   border-left: 1px solid rgba(0, 132, 255, 0.185);
   border-right: 1px solid rgba(0, 89, 255, 0.24);
 }
+
+/* PostSaga Themed Scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a3a7c;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6;
+}
+
+::-webkit-scrollbar-corner {
+  background: #0d1333;
+}

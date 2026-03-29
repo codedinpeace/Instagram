@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-full px-6 py-3 flex items-center justify-between bg-[#0d1333] border-b border-white/5">
+    <nav className="sticky top-0 z-50 w-full px-6 py-3 flex items-center justify-between bg-[#0d1333] border-b border-white/5">
       {/* Logo */}
       <Link to="/" className="flex items-center gap-2 group">
         <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:shadow-blue-500/50 transition-shadow duration-200">

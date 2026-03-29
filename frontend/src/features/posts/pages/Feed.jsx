@@ -4,10 +4,10 @@ import Post from '../components/Post'
 const Feed = () => {
   return (
     <>
-    <main className='flex justify-center '>
-    <div className='w-[50%] h-screen post-box'>
+    <main className='flex justify-center overflow-hidden    '>
+    <div className='w-200 h-screen post-box overflow-auto '>
     <Post />
-    </div>
+    </div>  
     </main>
     </>
   )
