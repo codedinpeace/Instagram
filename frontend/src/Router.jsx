@@ -15,10 +15,10 @@ const Router = () => {
     <>
         <Routes>
             <Route path='/' element={isLoggedIn ? <Feed /> : <Login />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/login' element={!isLoggedIn ? <Login /> : <Feed />} />
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/create-post' element={<CreatePost />} />
+            <Route path='/create-post' element={isLoggedIn ? <CreatePost /> : <Login />} />
         </Routes> 
     </>
   )
