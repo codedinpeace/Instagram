@@ -19,7 +19,7 @@ app.use(cookieParser())
 // cors
 app.use(cors({
     credentials:true,
-    origin:"http://localhost:5173"  
+    origin:"https://mithun-files.onrender.com",
 }))
 
 app.use(express.static("./public"))
