@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthStore } from '../../../States/authStore'
 import Loader from '../../../components/Loader'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
+    const naviagte = useNavigate()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
@@ -23,7 +25,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        login(Data)
+        login(Data, naviagte)
     }
 
   return (

@@ -7,11 +7,12 @@ export const useAuthStore = create((set)=>({
     isLoggedIn:false,
     isRegistering:false,
 
-    register: async (data) => {
+    register: async (data, navigate) => {
         set({isRegistering:true})
         try {
             const response = await axiosInstance.post("/auth/register", data)
             set({authUser:response.data, isLoggedIn:true})
+            navigate("/")
             console.log("Registered Successfully")
         } catch (error) {
             console.log(error)
@@ -20,11 +21,12 @@ export const useAuthStore = create((set)=>({
         }
     },
 
-    login: async (data) => {
+    login: async (data, navigate) => {
         set({isLoggingIn:true})
         try {
             const response = await axiosInstance.post("/auth/login", data)
             set({authUser:response.data, isLoggedIn:true})
+            navigate("/")
             console.log("Logged in successfully")
         } catch (error) {
             console.log(error)

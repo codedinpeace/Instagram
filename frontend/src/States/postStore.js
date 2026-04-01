@@ -18,12 +18,13 @@ export const usePostStore = create((set)=>({
         }
     },
 
-    createPost: async(formData) => {
+    createPost: async(formData, navigate) => {
         set({isCreatingPost:true})
         try {
             const response = await axiosInstance.post("/post/create-post", formData)
             console.log("Post created successfully")
             console.log(response.data.post)
+            navigate("/")
         } catch (error) {
             console.log(error)            
         } finally{

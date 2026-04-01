@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { usePostStore } from "../../../States/postStore";
 import Loader from "../../../components/Loader";
+import { useNavigate } from "react-router-dom";
 
 const CameraIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -25,6 +26,8 @@ const CameraIcon = () => (
   );
   
   export default function CreatePost() {
+    
+    const navigate = useNavigate()
     const [caption, setCaption] = useState("")
     const fileRef= useRef()
     const {createPost, isCreatingPost} = usePostStore()
@@ -36,7 +39,7 @@ const CameraIcon = () => (
         formData.append("image", fileRef.current.files[0])
         formData.append("caption", caption)
 
-        createPost(formData)
+        createPost(formData, navigate)
     }
 
     if(isCreatingPost){

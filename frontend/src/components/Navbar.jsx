@@ -21,7 +21,7 @@ export default function Navbar() {
           </svg>
         </div>
         <span className="text-white font-semibold tracking-wide text-sm uppercase">
-          PostSaga
+          MithunFiles
         </span>
       </Link>
 

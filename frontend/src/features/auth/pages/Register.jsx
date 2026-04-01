@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuthStore } from '../../../States/authStore'
 import Loader from '../../../components/Loader'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
 
+    const navigate = useNavigate()
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -26,7 +28,7 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        register(Data)
+        register(Data, navigate)
         console.log(Data)
     }
 
