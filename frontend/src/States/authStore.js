@@ -10,7 +10,7 @@ export const useAuthStore = create((set)=>({
     register: async (data, navigate) => {
         set({isRegistering:true})
         try {
-            const response = await axiosInstance.post("https://mithun-files.onrender.com//auth/register", data)
+            const response = await axiosInstance.post("/auth/register", data)
             set({authUser:response.data, isLoggedIn:true})
             navigate("/")
             console.log("Registered Successfully")
@@ -24,7 +24,7 @@ export const useAuthStore = create((set)=>({
     login: async (data, navigate) => {
         set({isLoggingIn:true})
         try {
-            const response = await axiosInstance.post("https://mithun-files.onrender.com//auth/login", data)
+            const response = await axiosInstance.post("/auth/login", data)
             set({authUser:response.data, isLoggedIn:true})
             navigate("/")
             console.log("Logged in successfully")
@@ -37,7 +37,7 @@ export const useAuthStore = create((set)=>({
 
     check:async ()=>{
         try {
-            const response = await axiosInstance.get("https://mithun-files.onrender.com//auth/check")
+            const response = await axiosInstance.get("/auth/check")
             set({authUser:response.data.authenticatedUser, isLoggedIn:true})
             // console.log(response.data.authenticatedUser)
         } catch (error) {
