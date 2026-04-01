@@ -22,11 +22,13 @@ app.use(cors({
     origin:"https://mithun-files.onrender.com",
 }))
 
-app.use(express.static("./public"))
+
 
 // routes
 app.use("/api/auth", authRouter)
 app.use("/api/post", postRouter)
 app.use("/api/user/", followRouter)
+
+app.use(express.static("./public"))
 
 module.exports = app
