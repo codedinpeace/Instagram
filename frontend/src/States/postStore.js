@@ -9,7 +9,7 @@ export const usePostStore = create((set)=>({
     getFeed: async () => {
         set({isGettingPosts:true})
         try {
-            const response = await axiosInstance.get("/post/get-feed")
+            const response = await axiosInstance.get("https://mithun-files.onrender.com//post/get-feed")
             set({posts:[...response.data.posts]})
         } catch (error) {
             console.log(error)
@@ -21,7 +21,7 @@ export const usePostStore = create((set)=>({
     createPost: async(formData, navigate) => {
         set({isCreatingPost:true})
         try {
-            const response = await axiosInstance.post("/post/create-post", formData)
+            const response = await axiosInstance.post("https://mithun-files.onrender.com//post/create-post", formData)
             console.log("Post created successfully")
             console.log(response.data.post)
             navigate("/")
